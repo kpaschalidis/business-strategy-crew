@@ -25,3 +25,44 @@ analyze_competitors_task:
   expected_output: >
     Detailed competitive analysis with specific competitors, positioning, and strategic recommendations
   agent: market_intelligence_agent
+
+develop_business_strategy_task:
+  description: >
+        Develop comprehensive business strategy for {company_name}.
+        
+        Company: {company_name}
+        Description: {company_description}
+        Target Market: {target_market}
+        
+        Create detailed strategy covering:
+        
+        1. VALUE PROPOSITION DESIGN
+        - Primary value proposition statement
+        - Unique selling points and differentiators
+        - Value proposition for each customer segment
+        - Proof points and validation
+        
+        2. GO-TO-MARKET STRATEGY
+        - Customer acquisition channels
+        - Sales process and methodology
+        - Marketing strategy and messaging
+        - Launch timeline and milestones
+        
+        3. PARTNERSHIP STRATEGY
+        - Strategic partnership opportunities
+        - Channel partner possibilities
+        - Technology integration partners
+        - Partnership development approach
+        
+        4. CUSTOMER RELATIONSHIP STRATEGY
+        - Customer onboarding process
+        - Customer success and retention
+        - Community building approach
+        - Customer feedback loops
+        
+        Research successful companies in similar markets for best practices and strategic approaches.
+        Provide specific, actionable recommendations with implementation guidance.
+  expected_output: >
+    Comprehensive business strategy with value propositions, go-to-market plan, and partnership strategy
+  agent: business_strategy_agent
+

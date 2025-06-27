@@ -17,6 +17,7 @@ async def run_async():
         "company_name": "OpenAI",
         "company_description": "OpenAI is a research lab that focuses on building safe and useful AI.",
         "industry": "AI",
+        "target_market": "AI",
     }
 
     try:
@@ -40,6 +41,7 @@ def train():
         "company_name": "OpenAI",
         "company_description": "OpenAI is a research lab that focuses on building safe and useful AI.",
         "industry": "AI",
+        "target_market": "AI",
     }
     try:
         BusinessStrategy().crew().train(
@@ -69,6 +71,7 @@ def test():
         "company_name": "OpenAI",
         "company_description": "OpenAI is a research lab that focuses on building safe and useful AI.",
         "industry": "AI",
+        "target_market": "AI",
     }
 
     try:

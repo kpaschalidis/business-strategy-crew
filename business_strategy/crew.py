@@ -24,11 +24,30 @@ class BusinessStrategy:
             ],
         )
 
+    @agent
+    def business_strategy_agent(self) -> Agent:
+        return Agent(
+            config=self.agents_config["business_strategy_agent"],
+            verbose=True,
+            tools=[
+                SerperDevTool(),
+                WebsiteSearchTool(),
+                ScrapeWebsiteTool(),
+            ],
+        )
+
     @task
     def analyze_competitors_task(self) -> Task:
         return Task(
             config=self.tasks_config["analyze_competitors_task"],
-            output_file="competitors_analysis.md",
+            output_file="reports/competitors_analysis.md",
+        )
+
+    @task
+    def develop_business_strategy_task(self) -> Task:
+        return Task(
+            config=self.tasks_config["develop_business_strategy_task"],
+            output_file="reports/business_strategy.md",
         )
 
     @crew
