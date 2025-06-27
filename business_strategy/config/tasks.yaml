@@ -72,7 +72,6 @@ analyze_business_financials_task:
         
         Company: {company_name}
         Description: {company_description}
-        Business Model: {business_model}
         
         Analyze and design:
         
@@ -111,3 +110,22 @@ analyze_business_financials_task:
   expected_output: >
     Comprehensive financial analysis with revenue model, unit economics, cost structure, and projections
   agent: financial_analysis_agent
+
+synthesis_task:
+  description: >
+        Synthesize all analysis into executive summary and strategic recommendations for {company_name}.
+        
+        Read the analysis files and create:
+        1. Executive summary of key findings
+        2. Strategic recommendations and priorities
+        3. Implementation roadmap and next steps
+        4. Risk assessment and mitigation strategies
+        
+        Ensure all recommendations are coherent and actionable.
+  expected_output: >
+    Executive summary with strategic recommendations
+  agent: synthesis_agent
+  context:
+    - analyze_competitors_task
+    - develop_business_strategy_task
+    - analyze_business_financials_task

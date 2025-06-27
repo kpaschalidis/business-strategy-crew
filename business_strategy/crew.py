@@ -2,7 +2,13 @@ from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import List
-from crewai_tools import SerperDevTool, WebsiteSearchTool, ScrapeWebsiteTool
+from crewai_tools import (
+    SerperDevTool,
+    WebsiteSearchTool,
+    ScrapeWebsiteTool,
+    FileReadTool,
+    FileWriterTool,
+)
 
 
 @CrewBase
@@ -48,6 +54,14 @@ class BusinessStrategy:
             ],
         )
 
+    @agent
+    def synthesis_agent(self) -> Agent:
+        return Agent(
+            config=self.agents_config["synthesis_agent"],
+            verbose=True,
+            tools=[FileReadTool(), FileWriterTool()],
+        )
+
     @task
     def analyze_competitors_task(self) -> Task:
         return Task(
@@ -60,6 +74,9 @@ class BusinessStrategy:
         return Task(
             config=self.tasks_config["develop_business_strategy_task"],
             output_file="reports/business_strategy.md",
+            context=[
+                self.tasks_config["analyze_competitors_task"],
+            ],
         )
 
     @task
@@ -67,6 +84,22 @@ class BusinessStrategy:
         return Task(
             config=self.tasks_config["analyze_business_financials_task"],
             output_file="reports/business_financials.md",
+            context=[
+                self.tasks_config["analyze_competitors_task"],
+                self.tasks_config["develop_business_strategy_task"],
+            ],
+        )
+
+    @task
+    def synthesis_task(self) -> Task:
+        return Task(
+            config=self.tasks_config["synthesis_task"],
+            output_file="reports/executive_summary.md",
+            context=[
+                self.tasks_config["analyze_competitors_task"],
+                self.tasks_config["develop_business_strategy_task"],
+                self.tasks_config["analyze_business_financials_task"],
+            ],
         )
 
     @crew
