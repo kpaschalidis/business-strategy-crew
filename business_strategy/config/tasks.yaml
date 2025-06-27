@@ -1,0 +1,27 @@
+analyze_competitors_task:
+  description: >
+        Conduct comprehensive competitive analysis for {company_name}.
+        
+        Company: {company_name}
+        Description: {company_description}
+        Industry: {industry}
+        
+        Research and analyze:
+        1. Direct competitors (minimum 5 companies)
+        2. Indirect competitors and alternatives
+        3. Competitive positioning and differentiation
+        4. Pricing strategies and business models
+        5. Market gaps and opportunities
+        
+        For each competitor, provide:
+        - Company name and website
+        - Target market and positioning
+        - Key products/services
+        - Pricing model (if available)
+        - Strengths and weaknesses
+        - Recent developments
+        
+        Output a comprehensive competitive landscape analysis with strategic recommendations.
+  expected_output: >
+    Detailed competitive analysis with specific competitors, positioning, and strategic recommendations
+  agent: market_intelligence_agent
