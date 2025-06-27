@@ -66,3 +66,48 @@ develop_business_strategy_task:
     Comprehensive business strategy with value propositions, go-to-market plan, and partnership strategy
   agent: business_strategy_agent
 
+analyze_business_financials_task:
+  description: >
+        Conduct comprehensive financial analysis for {company_name}.
+        
+        Company: {company_name}
+        Description: {company_description}
+        Business Model: {business_model}
+        
+        Analyze and design:
+        
+        1. REVENUE MODEL DESIGN
+        - Appropriate pricing models (subscription, freemium, usage-based, etc.)
+        - Pricing tiers and feature packaging
+        - Revenue stream diversification opportunities
+        - Pricing strategy benchmarks from similar companies
+        
+        2. UNIT ECONOMICS ANALYSIS
+        - Customer acquisition cost (CAC) estimates
+        - Customer lifetime value (LTV) projections
+        - LTV:CAC ratios and payback periods
+        - Gross margin and contribution margin analysis
+        
+        3. COST STRUCTURE ANALYSIS
+        - Fixed vs variable cost breakdown
+        - Technology and infrastructure costs
+        - Personnel and operational costs
+        - Cost optimization opportunities
+        
+        4. FINANCIAL PROJECTIONS
+        - 3-year revenue projections
+        - Cash flow analysis and burn rate
+        - Break-even analysis and timeline
+        - Funding requirements and milestones
+        
+        5. KEY RESOURCES & ACTIVITIES
+        - Critical resources needed for operations
+        - Key activities that drive value creation
+        - Resource allocation priorities
+        - Operational efficiency metrics
+        
+        Research industry benchmarks and best practices for similar business models.
+        Provide specific recommendations for optimizing financial performance.
+  expected_output: >
+    Comprehensive financial analysis with revenue model, unit economics, cost structure, and projections
+  agent: financial_analysis_agent

@@ -36,6 +36,18 @@ class BusinessStrategy:
             ],
         )
 
+    @agent
+    def financial_analysis_agent(self) -> Agent:
+        return Agent(
+            config=self.agents_config["financial_analysis_agent"],
+            verbose=True,
+            tools=[
+                SerperDevTool(),
+                WebsiteSearchTool(),
+                ScrapeWebsiteTool(),
+            ],
+        )
+
     @task
     def analyze_competitors_task(self) -> Task:
         return Task(
@@ -48,6 +60,13 @@ class BusinessStrategy:
         return Task(
             config=self.tasks_config["develop_business_strategy_task"],
             output_file="reports/business_strategy.md",
+        )
+
+    @task
+    def analyze_business_financials_task(self) -> Task:
+        return Task(
+            config=self.tasks_config["analyze_business_financials_task"],
+            output_file="reports/business_financials.md",
         )
 
     @crew
