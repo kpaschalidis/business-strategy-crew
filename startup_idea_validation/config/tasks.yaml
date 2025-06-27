@@ -1,0 +1,38 @@
+validate_startup_idea_task:
+  description: >
+        Validate the startup idea: {idea_name}
+        
+        Idea: {idea_name}
+        Description: {idea_description}
+        Target Market: {target_market}
+        
+        Conduct rapid validation analysis:
+        
+        1. MARKET DEMAND VALIDATION
+        - Is there evidence of market demand for this solution?
+        - What are people currently using to solve this problem?
+        - How big is the potential market?
+        - Are there similar successful companies?
+        
+        2. COMPETITIVE LANDSCAPE
+        - Who are the direct competitors?
+        - What alternatives exist?
+        - How crowded is the market?
+        - What's the competitive differentiation opportunity?
+        
+        3. FEASIBILITY ASSESSMENT
+        - How difficult would this be to build?
+        - What are the key risks and challenges?
+        - What resources would be required?
+        - What's the time to market estimate?
+        
+        4. VALIDATION RECOMMENDATION
+        - Overall viability score (1-10)
+        - Key strengths and opportunities
+        - Major risks and concerns
+        - Next steps for validation
+        
+        Provide a clear GO/NO-GO recommendation with reasoning.
+  expected_output: >
+    Startup validation analysis with GO/NO-GO recommendation
+  agent: startup_validation_agent
